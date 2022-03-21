@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".home.fragmets.ProfileFragmnet">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:elevation="2dp">
+
+        <androidx.appcompat.widget.Toolbar
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Profile"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_spacing"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ordersTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_spacing"
+            android:layout_weight=".5"
+            android:background="@drawable/box_shape_selected"
+            android:backgroundTint="@color/laal"
+            android:drawableTop="@drawable/ic_baseline_local_shipping_24"
+            android:drawableTint="@color/white"
+            android:padding="@dimen/normal_spacing"
+            android:text="My Orders"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/wishListTV"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_spacing"
+            android:layout_marginRight="@dimen/normal_spacing"
+            android:layout_weight=".5"
+            android:background="@drawable/box_shape_selected"
+            android:backgroundTint="@color/laal"
+            android:drawableTop="@drawable/ic_heart"
+            android:drawableTint="@color/white"
+            android:padding="@dimen/normal_spacing"
+            android:text="Wish List"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/addressTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/normal_spacing"
+            android:layout_weight=".5"
+            android:background="@drawable/box_shape_selected"
+            android:backgroundTint="@color/laal"
+            android:drawableTop="@drawable/ic_baseline_location_on_24"
+            android:drawableTint="@color/white"
+            android:padding="@dimen/normal_spacing"
+            android:text="Addresses"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/logOutTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normal_spacing"
+        android:layout_marginTop="@dimen/normal_spacing"
+        android:layout_marginRight="@dimen/normal_spacing"
+        android:background="@drawable/box_shape_selected"
+        android:backgroundTint="#F1EEEE"
+        android:drawableRight="@drawable/ic_baseline_login_24"
+        android:drawableTint="@color/laal"
+        android:padding="@dimen/normal_spacing"
+        android:text="Log Out"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/adminAreaTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_spacing"
+        android:background="@drawable/box_shape_selected"
+        android:backgroundTint="#F1EEEE"
+        android:drawableRight="@drawable/ic_baseline_admin_panel_settings_24"
+        android:drawableTint="@color/laal"
+        android:padding="@dimen/normal_spacing"
+        android:text="Admin Area"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+</LinearLayout>
