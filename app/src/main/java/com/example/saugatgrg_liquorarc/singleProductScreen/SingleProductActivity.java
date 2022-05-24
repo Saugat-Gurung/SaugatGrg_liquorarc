@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.saugatgrg_liquorarc.R;
 import com.example.saugatgrg_liquorarc.api.ApiClient;
+import com.example.saugatgrg_liquorarc.api.responses.AllProductResponse;
 import com.example.saugatgrg_liquorarc.api.responses.Product;
 import com.example.saugatgrg_liquorarc.api.responses.RegisterResponse;
 import com.example.saugatgrg_liquorarc.api.responses.SingleProductResponse;
@@ -38,7 +39,7 @@ public class SingleProductActivity extends AppCompatActivity {
     ProgressBar addingCartPR;
     ImageView backIV, plusIV, minusIV;
     TextView name, price, desc, oldPrice, quantityTV;
-    LinearLayout addToCartLL;
+    LinearLayout addToCartLL, addwishlistLL;
     int quantity = 1;
     boolean isAdding = false;
 
@@ -57,6 +58,7 @@ public class SingleProductActivity extends AppCompatActivity {
         oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
         addingCartPR = findViewById(R.id.addingCartPR);
+        addwishlistLL = findViewById(R.id.addwishlistLL);
         desc = findViewById(R.id.decTV);
         plusIV = findViewById(R.id.plusIV);
         minusIV = findViewById(R.id.minusIV);
@@ -177,6 +179,31 @@ public class SingleProductActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
             }
 
+        });
+
+        addwishlistLL.setOnClickListener(v ->{
+            if (!isAdding){
+                isAdding = true;
+                String apikey = SharedPrefUtils.getString(this,getString(R.string.api_key));
+                Call<AllProductResponse> wishlistCall = ApiClient.getClient().addtowishlist(apikey,product.getId());
+                wishlistCall.enqueue(new Callback<AllProductResponse>() {
+                    @Override
+                    public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
+                        if (response.isSuccessful()){
+                            if (!response.body().getError()){
+                                Toast.makeText(SingleProductActivity.this, "Added to Wishlist", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        isAdding = false;
+                    }
+
+                    @Override
+                    public void onFailure(Call<AllProductResponse> call, Throwable t) {
+                        isAdding = false;
+
+                    }
+                });
+            }
         });
     }
 

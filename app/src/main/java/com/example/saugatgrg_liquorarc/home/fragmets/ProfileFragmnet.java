@@ -12,19 +12,24 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.saugatgrg_liquorarc.R;
+import com.example.saugatgrg_liquorarc.admin.AdminActivity;
 import com.example.saugatgrg_liquorarc.checkout.address.AddressActivity;
+import com.example.saugatgrg_liquorarc.checkout.orderComplete.OrderActivity;
+import com.example.saugatgrg_liquorarc.home.AboutUsActivity;
+import com.example.saugatgrg_liquorarc.home.fragmets.home.WishlistActivity;
 import com.example.saugatgrg_liquorarc.userAccount.UserAccountActivity;
 import com.example.saugatgrg_liquorarc.utils.SharedPrefUtils;
 
 
 public class ProfileFragmnet extends Fragment {
 
-    TextView logOutTV, adminAreaTV, addressTV;
+    TextView logOutTV, adminAreaTV, addressTV, ordersTV, aboutus, wishlistTV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_profile_fragmnet, container, false);
     }
 
@@ -34,6 +39,9 @@ public class ProfileFragmnet extends Fragment {
         logOutTV = view.findViewById(R.id.logOutTV);
         adminAreaTV = view.findViewById(R.id.adminAreaTV);
         addressTV = view.findViewById(R.id.addressTV);
+        ordersTV = view.findViewById(R.id.ordersTV);
+        aboutus = view.findViewById(R.id.aboutus);
+        wishlistTV = view.findViewById(R.id.wishListTV);
 //        checkAdmin();
         setClickListeners();
     }
@@ -56,17 +64,42 @@ public class ProfileFragmnet extends Fragment {
             }
         });
 
-//        adminAreaTV.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), AdminActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        adminAreaTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AdminActivity.class);
+                startActivity(intent);
+            }
+        });
         addressTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddressActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        wishlistTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WishlistActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        ordersTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), OrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutUsActivity.class);
                 startActivity(intent);
             }
         });

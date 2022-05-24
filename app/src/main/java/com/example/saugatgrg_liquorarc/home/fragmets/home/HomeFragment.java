@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,8 +53,9 @@ public class    HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
     SliderView imageSlider;
-    TextView viewAllTV;
-    LinearLayout searchLL;
+    TextView viewAllTV, goSearch;
+    SearchView searchView;
+    ShopAdapter shopAdapter;
     BottomNavigationView bottomNavigationView;
 
 
@@ -78,11 +80,24 @@ public class    HomeFragment extends Fragment {
         loadingProgress = view.findViewById(R.id.loadingProgress);
         imageSlider = view.findViewById(R.id.imageSlider);
         viewAllTV = view.findViewById(R.id.viewAllTV);
-        searchLL = view.findViewById(R.id.searchLL);
+        searchView = view.findViewById(R.id.searchView);
+        goSearch=view.findViewById(R.id.goSearch);
         serverCall();
         getCategoriesOnline();
         getSliders();
         setClickListeners();
+        getSearch();
+
+    }
+
+    private void getSearch() {
+        goSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setClickListeners() {
@@ -92,14 +107,11 @@ public class    HomeFragment extends Fragment {
                 bottomNavigationView.setSelectedItemId(R.id.category);
             }
         });
-        searchLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
     }
+
+
+
 
     private void serverCall() {
 
@@ -222,7 +234,7 @@ public class    HomeFragment extends Fragment {
         allProductRV.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         allProductRV.setLayoutManager(layoutManager);
-        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), false);
+        shopAdapter = new ShopAdapter(products, getContext(), false);
         allProductRV.setAdapter(shopAdapter);
     }
 

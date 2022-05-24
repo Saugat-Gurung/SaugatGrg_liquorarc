@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.saugatgrg_liquorarc">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,35 +14,74 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_saugat"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:usesCleartextTraffic="true"
+        android:roundIcon="@drawable/logo_saugat"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ecommerce">
-
+        android:theme="@style/Theme.Ecommerce"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:theme">
         <activity
-            android:name=".checkout.address.AddressActivity"
+            android:name=".admin.seeOrder.ListOrderActivity"
             android:exported="true" />
         <activity
-            android:name=".checkout.orderComplete.OrderCompleteActivity"
+            android:name=".admin.addProduct.AddProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addProduct.SelectCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.products.ListProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addCategory.ListCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.fragmets.home.WishlistActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.fragmets.home.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".checkout.address.AddAddressActivity"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-
-            />
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".checkout.orderComplete.OrderHistoryDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".home.AboutUsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".checkout.orderComplete.OrderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".checkout.address.AddressActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".checkout.orderComplete.OrderCompleteActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".checkout.CheckOutActivity"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".categoryPage.CategoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.HomeTheme"/>
         <activity
             android:name=".singleProductScreen.SingleProductActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            />
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".userAccount.UserAccountActivity"
             android:exported="true"
@@ -61,6 +101,15 @@
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

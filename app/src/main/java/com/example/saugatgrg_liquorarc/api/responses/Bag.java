@@ -3,7 +3,9 @@ package com.example.saugatgrg_liquorarc.api.responses;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Bag {
+import java.io.Serializable;
+
+public class Bag implements Serializable {
 
 @SerializedName("id")
 @Expose
@@ -53,9 +55,7 @@ public void setQuantity(Integer quantity) {
 this.quantity = quantity;
 }
 
-public Product getProduct() {
-return product;
-}
+public Product getProduct() { return product; }
 
 public void setProduct(Product product) {
 this.product = product;

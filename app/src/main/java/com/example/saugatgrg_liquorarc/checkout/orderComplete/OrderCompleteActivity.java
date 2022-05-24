@@ -15,6 +15,8 @@ public class OrderCompleteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().setStatusBarColor(Color.WHITE);
         setContentView(R.layout.activity_order_complete2);
         backTV = findViewById(R.id.backTV);
         shopMoreTv = findViewById(R.id.shopMoreTv);

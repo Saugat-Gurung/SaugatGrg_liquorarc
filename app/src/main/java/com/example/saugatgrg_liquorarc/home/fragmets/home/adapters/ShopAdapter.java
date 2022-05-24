@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,10 +20,13 @@ import com.example.saugatgrg_liquorarc.singleProductScreen.SingleProductActivity
 import com.squareup.picasso.Picasso;
 
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
+public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> implements Filterable {
     List<Product> productDataList;
+    List<Product> searchData;
     LayoutInflater layoutInflater;
     Context context;
     Boolean isCart = false;
@@ -104,6 +109,42 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     public int getItemCount() {
         return productDataList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    private Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Product> products = new ArrayList<>();
+            if (constraint==null || constraint.length()==0 ) {
+                products.addAll(searchData);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase(Locale.ROOT).trim();
+                for (Product product:searchData){
+                    if (product.getName().toLowerCase(Locale.ROOT).contains(filterPattern)) {
+                        products.add(product);
+                    }
+                    else if (product.getId().toString().toLowerCase(Locale.ROOT).contains(filterPattern)) {
+                        products.add(product);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = products;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            productDataList.clear();
+            productDataList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class ShopViewHolder extends RecyclerView.ViewHolder {
         ImageView productIV, removeCartIV;

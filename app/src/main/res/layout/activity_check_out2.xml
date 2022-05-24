@@ -21,12 +21,11 @@
 
             <ImageView
                 android:id="@+id/backIv"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/rectange_box"
-                android:backgroundTint="@color/grey_divider"
-                android:padding="4dp"
+
+                android:padding="10dp"
                 android:src="@drawable/ic_round_arrow_back_ios_new_24"
                 app:tint="@color/priceGray" />
 
@@ -167,7 +166,7 @@
 
 
             <ImageView
-
+                android:id="@+id/codIv"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/box_shape_selected"
@@ -178,6 +177,7 @@
 
 
             <ImageView
+                android:id="@+id/khaltiIv"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="@dimen/normal_spacing"
@@ -187,15 +187,7 @@
                 app:civ_border_color="@color/grey_divider"
                 app:civ_border_width="1dp" />
 
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="@dimen/normal_spacing"
-                android:background="@drawable/box_shape"
-                android:padding="8dp"
-                android:src="@drawable/esewa"
-                app:civ_border_color="@color/grey_divider"
-                app:civ_border_width="1dp" />
+
 
 
         </LinearLayout>

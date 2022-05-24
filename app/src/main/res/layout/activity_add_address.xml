@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".checkout.address.AddAddressActivity">
+
+    <ImageView
+        android:id="@+id/backIV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:src="@drawable/ic_round_arrow_back_ios_new_24" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Please enter your address"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cityInput"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/City"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/lato_regular"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="8dp"
+            android:hint="City"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/streetInput"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/Street"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/lato_regular"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="8dp"
+            android:hint="Street"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descInput"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/desc"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Description of address"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ProvinceInput"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/province"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:imeOptions="actionNext"
+            android:fontFamily="@font/lato_regular"
+            android:layout_marginBottom="8dp"
+            android:hint="Province"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/addbtn"
+        android:layout_width="248dp"
+        android:backgroundTint="@color/laal"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:text="Add Address"/>
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="248dp"
+        android:backgroundTint="@color/laal"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:text="Cancel"/>
+
+</LinearLayout>

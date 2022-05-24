@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login"
+            android:layout_margin="10dp"
             android:textColor="@color/black"
             android:fontFamily="@font/roboto_regular"
             android:textSize="28sp"
@@ -28,7 +29,7 @@
             android:id="@+id/emailET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_margin="10dp"
             android:drawableLeft="@drawable/ic_at"
             android:paddingLeft="16dp"
             android:fontFamily="@font/roboto_regular"
@@ -47,29 +48,37 @@
                 android:id="@+id/passwordET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/search_shape"
                 android:drawableLeft="@drawable/ic_padlock"
+                android:drawableRight="@drawable/ic_baseline_visibility_off_24"
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/roboto_regular"
                 android:hint="Password ID"
                 android:inputType="textPassword"
                 android:paddingLeft="16dp"
                 android:paddingTop="18dp"
-                android:paddingEnd="65dp"
+                android:paddingEnd="20dp"
                 android:paddingBottom="18dp"
                 android:textSize="16sp" />
 
-            <TextView
-
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/forget"
-                android:textColor="@color/laal"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:id="@+id/PasswordET"-->
+<!--                android:fontFamily="@font/roboto_regular"-->
+<!--                android:background="@drawable/search_shape"-->
+<!--                android:layout_margin="20dp"-->
+<!--                android:hint="Password"-->
+<!--                android:textSize="sp"-->
+<!--                android:paddingLeft="15dp"-->
+<!--                android:drawableRight="@drawable/ic_baseline_visibility_off_24"-->
+<!--                android:drawableTint="?attr/colorControlNormal"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:paddingRight="15dp"/>-->
 
         </RelativeLayout>
 
@@ -78,7 +87,7 @@
             android:id="@+id/loginLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
             android:background="@drawable/rectange_box"
             android:onClick="onLoginClicked"
             android:backgroundTint="@color/laal"

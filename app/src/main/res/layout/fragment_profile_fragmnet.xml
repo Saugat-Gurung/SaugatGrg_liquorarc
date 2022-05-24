@@ -9,9 +9,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        app:elevation="2dp">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
 
@@ -31,8 +29,8 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,6 +38,7 @@
         android:layout_margin="@dimen/normal_spacing"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
+
 
         <TextView
             android:id="@+id/ordersTV"
@@ -89,6 +88,22 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/aboutus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normal_spacing"
+        android:layout_marginTop="@dimen/normal_spacing"
+        android:layout_marginRight="@dimen/normal_spacing"
+        android:background="@drawable/box_shape_selected"
+        android:backgroundTint="#F1EEEE"
+        android:drawableLeft="@drawable/ic_home"
+        android:drawableTint="@color/laal"
+        android:padding="@dimen/normal_spacing"
+        android:text="   About Us"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/logOutTV"

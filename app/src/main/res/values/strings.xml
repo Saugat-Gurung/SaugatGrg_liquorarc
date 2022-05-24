@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ecommerce</string>
+    <string name="app_name">Liquorarc</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="login">Login</string>
     <string name="email_id">Email ID</string>
@@ -14,6 +14,8 @@
     <string name="email_key" translatable="false">ek</string>
     <string name="name_key" translatable="false">nk</string>
     <string name="created_key" translatable="false">ck</string>
+    <string name="staff_key" translatable="false">ck</string>
+
 
     <string name="powered_by">Drink first, think later</string>
 

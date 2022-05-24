@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.saugatgrg_liquorarc.R;
 import com.example.saugatgrg_liquorarc.api.ApiClient;
@@ -27,14 +31,31 @@ public class AddressActivity extends AppCompatActivity {
     public static String ADDRESS_SELECTED_KEY = "DFa";
     AddressAdapter addressAdapter;
     List<Adress> data;
+    ImageView backIVaddress;
+    TextView addaddressTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().setStatusBarColor(Color.WHITE);
         setContentView(R.layout.activity_address);
         addressRV = findViewById(R.id.addressRV);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Select Address");
+        addaddressTV = findViewById(R.id.addaddressTV);
+        backIVaddress = findViewById(R.id.backIVaddress);
+
+        backIVaddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        addaddressTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),AddAddressActivity.class);
+                startActivity(intent);
+            }
+        });
         getAddressOnline();
     }
 

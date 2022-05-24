@@ -44,6 +44,8 @@ public class CategoryActivity extends AppCompatActivity {
         loadingProgress = findViewById(R.id.loadingProgress);
         emptyIV = findViewById(R.id.emptyIV);
 
+
+
         category = (Category) getIntent().getSerializableExtra(CATEGORY_DATA_KEY);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

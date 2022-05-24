@@ -47,9 +47,15 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+
     // circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+
+
     // image slider
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation ('com.khalti:khalti-android:2.00.00') {
+        transitive = true
+    }
 }
